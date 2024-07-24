@@ -8,6 +8,7 @@ let result;
 let computerChoiceString;
 let wins = 0;
 let losses = 0;
+let i;
 
 //Prompt user to choose between rock, paper, and scissors
 //Assign value to user's choice. Rock is 1, paper is 2, scissors is 3
@@ -45,11 +46,12 @@ function stringify() {
 }
 
 function calculate() {
-    if (userchoice > 0) {
+    if (userChoice > 0) {
         result = userChoice - computerChoice
     }
     else {
     start ()
+    i = 101
     }
     return result
 }
@@ -65,6 +67,8 @@ function winLose() {
     } else if (result === -1 || result === 2) {
         console.log(`You lose! I chose ${computerChoiceString}`)
         losses ++
+     } else if (result ==3) {
+        i = 101
     } else {
         console.log(`idk what you did, but you screwed up.`)
     }
@@ -72,13 +76,14 @@ function winLose() {
 
 //now loop it
 
-for (let i = 0; i < 100; i++) {
+for (i = 0; i < 100; i++) {
     start();
 takeInput();
 random1to3();
 stringify();
 calculate();
 winLose();
+console.log(wins)
 
   }
 
