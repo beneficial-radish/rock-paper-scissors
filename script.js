@@ -1,8 +1,96 @@
+//Rock Paper Scissors
 console.log("Hello World!")
+
+//Create function getComputerChoice
+//Randomly returns "rock", "paper", or "scissors"
+//console.log(the return value)
+
+function random1to3() {
+    let random = Math.floor(Math.random() * 3 + 1)
+   return random
+}
+
+function randomComputer() {
+    random()
+    let computerChoice = random
+
+    return computerChoice
+}
+
+function stringify(choice) {
+    choice == 1 ? choiceString = "rock" : choice == 2 ? choiceString = "paper" : choice == 3 ? choiceString = "scissors" : computerChoiceString = shoes;
+    return choiceString
+}
+
+function getComputerChoice() {
+    random1to3()
+    let computerChoiceString = stringify(computerChoice)
+    console.log(`Computer chooses $(computerChoiceString)`)
+    return computerChoiceString
+}
+
+//Create a function called getHumanChoice
+//Always returns valid choice of rock, paper, or scissors. 
+function getHumanChoice() {
+    let humanChoiceString = prompt("Choose rock, paper, or scissors.")
+    humanChoiceString = humanChoiceString.toLowerCase()
+    if(humanChoiceString == "rock" || humanChoiceString == "paper" || humanChoiceString == "scissors") {
+        console.log(`you chose $(humanChoiceString)`) 
+    } else {
+        random()
+        let humanChoice = random
+        stringify(humanChoice)
+        humanChoiceString = choiceString
+        console.log(`You did not enter a valid value. I'm choosing for you. You chose $(humanChoiceString)`)
+        
+    }
+    return humanChoiceString
+}
+
+//Create variables humanScore and computerScore
+let humanScore = 0
+let computerScore = 0
+
+//Create new function playRound with parameters humanChoice and computerChoice
+//Except I've already plotted all the potential scenarios, so I don't want to do that.
+
+function humanChoiceNum() {
+    if(humanChoiceString == "rock" || humanChoiceString == "paper" || humanChoiceString == "scissors") {
+        humanChoiceString == "rock" ? humanChoice = 1 : humanChoiceString == "paper"? humanChoice = 2 : humanChoiceString == "scissors" ? humanChoice = 3 : humanChoice = 0
+    } else {
+    console.log("error")
+    return humanChoice
+  }
+
+function calculate() {
+    let result = userChoice - computerChoice
+    return result
+    }
+
+function winLose() {
+    if (result === 0) {
+        console.log(`It's a tie! we both chose ${computerChoiceString}`)
+    } else if (result === 1 || result === -2) {
+        console.log(`You win! I chose ${computerChoiceString}`)
+        humanScore ++
+    } else if (result === -1 || result === 2) {
+        console.log(`You lose! I chose ${computerChoiceString}`)
+        computerScore ++
+    } else {
+        console.log(`idk what you did, but you screwed up.`)
+    }
+}
+
+function playRound (computerChoiceString, humanChoiceString) {
+    getComputerChoice()
+    getHumanChoice()
+    calculate()
+    winLose()
+}
+
 
 // Rock Paper Scissors
 let computerChoice;
-let userChoiceString;
 let userChoice;
 let result;
 let computerChoiceString;
@@ -18,18 +106,7 @@ let i;
   function start() {
   userChoiceString = prompt("Choose rock, paper, or scissors!") 
   }
-  function takeInput() {
-    if(userChoiceString == "rock" || userChoiceString == "paper" || userChoiceString == "scissors") {
-        userChoiceString == "rock" ? userChoice = 1 : userChoiceString == "paper"? userChoice = 2 : userChoiceString == "scissors" ? userChoice = 3 : userChoice = 0
-    } else if (userChoiceString == "wins") {
-        console.log(wins) 
-    } else if (userChoiceString == "losses") {
-     console.log(losses) 
-    } else {
-    console.log("Please try again. Type rock, paper, or scissors.")
-    }
-    return userChoice
-  }
+  
 
   
 //If 1, computer chooses rock. If 2, computer chooses paper. If 3, computer chooses scissors
@@ -45,10 +122,7 @@ function stringify() {
     return computerChoiceString
 }
 
-function calculate() {
-    if (userChoice > 0) {
-        result = userChoice - computerChoice
-    }
+f
     else {
     start ()
     i = 101
@@ -58,21 +132,7 @@ function calculate() {
 //value 0 means tie, values 1 and -2 mean win, and values -1 and 2 mean loss
 //add up losses and wins as they happen
 
-function winLose() {
-    if (result === 0) {
-        console.log(`It's a tie! we both chose ${computerChoiceString}`)
-    } else if (result === 1 || result === -2) {
-        console.log(`You win! I chose ${computerChoiceString}`)
-        wins ++
-    } else if (result === -1 || result === 2) {
-        console.log(`You lose! I chose ${computerChoiceString}`)
-        losses ++
-     } else if (result ==3) {
-        i = 101
-    } else {
-        console.log(`idk what you did, but you screwed up.`)
-    }
-}
+
 
 //now loop it
 
