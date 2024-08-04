@@ -73,9 +73,8 @@ let computerScore = 0
 //Create new function playRound with parameters humanChoice and computerChoice
 //Except I've already plotted all the potential scenarios, so I don't want to do that.
 
-function playRound() {
+function playRound(humanSelection) {
     const computerSelection = getComputerChoice()
-    const humanSelection = getHumanChoice()
     const computerChoiceNum = numify(computerSelection)
     const humanChoiceNum = numify(humanSelection)
     winLose(humanChoiceNum, computerChoiceNum)
@@ -85,10 +84,14 @@ function playRound() {
         for (i=0; i<5; i++)
             playRound()
         }
-const rockbtn = document.querySelector('#rock')
-const paperbtn = document.querySelector('#paper')
-const scissorsbtn = document.querySelector('#scissors')
+const rockBtn = document.querySelector('#rock')
+const paperBtn = document.querySelector('#paper')
+const scissorsBtn = document.querySelector('#scissors')
 
+
+rockBtn.addEventListener("click", playRound("rock"))
+paperBtn.addEventListener("click", playRound("paper"))
+scissorsBtn.addEventListener("click", playRound("scissors"))
 
 
     //playGame()
