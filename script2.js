@@ -85,8 +85,11 @@ function playRound() {
         for (i=0; i<5; i++)
             playRound()
         }
+const rockbtn = document.querySelector('#rock')
+const paperbtn = document.querySelector('#paper')
+const scissorsbtn = document.querySelector('#scissors')
 
 
 
-    playGame()
-    console.log(`the score is ${humanScore} to ${computerScore}`)
+    //playGame()
+    //console.log(`the score is ${humanScore} to ${computerScore}`)
